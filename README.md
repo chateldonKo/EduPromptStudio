@@ -6,7 +6,7 @@
 
 ## 在线体验
 
-https://chateldonko.github.io/EduPrompt-Studio/
+https://chateldonko.github.io/EduPromptStudio/
 
 支持：
 
