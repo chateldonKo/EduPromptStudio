@@ -4,6 +4,10 @@
 
 一个面向高校行政办公场景的 Prompt 生成工具。
 
+## 在线体验
+
+https://chateldonko.github.io/EduPrompt-Studio/
+
 支持：
 
 - 整改报告
