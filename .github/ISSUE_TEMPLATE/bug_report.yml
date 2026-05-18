@@ -1,0 +1,55 @@
+name: 🐛 Bug 报告
+description: 报告一个使用过程中遇到的问题
+title: "[Bug] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢花时间反馈问题。请尽量描述清楚，便于排查与复现。
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 问题描述
+      description: 你看到的现象是什么？预期应该是什么？
+      placeholder: |
+        例如：点击「生成 Prompt」按钮无反应，控制台报错 ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 一步一步告诉我们怎么复现。
+      placeholder: |
+        1. 打开 https://chateldonko.github.io/EduPromptStudio/
+        2. 在「材料类型」中选择 ...
+        3. 点击「生成 Prompt」
+        4. 看到 ...
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: 运行环境
+      description: 浏览器与版本、操作系统、是否本地运行
+      placeholder: 例如：Chrome 130 / Windows 11 / 在线版
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图或控制台报错（可选）
+      description: 可粘贴截图、F12 控制台报错文本等。
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 自检
+      options:
+        - label: 我已在 issue 列表中搜索过同类问题，未发现重复。
+          required: true

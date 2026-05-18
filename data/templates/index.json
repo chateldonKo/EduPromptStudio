@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "description": "EduPromptStudio 模板清单。按显示顺序排列，新模板请在末尾追加并同时新增对应 JSON。",
+  "templates": [
+    "rectification",
+    "summary",
+    "implementation",
+    "project",
+    "research",
+    "meeting",
+    "notice",
+    "speech",
+    "accreditation"
+  ]
+}

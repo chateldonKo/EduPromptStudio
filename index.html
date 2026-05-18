@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>EduPrompt Studio — 高校行政 AI 公文 Prompt 生成器</title>
+  <meta name="description" content="面向高校行政办公场景的 Prompt 工具箱：整改报告、年终总结、工作方案、项目申报、调研报告、会议纪要、通知、讲话稿、教学认证等九大类材料一键生成 Prompt，适配 ChatGPT、Claude、DeepSeek。" />
+  <meta name="keywords" content="高校公文,行政公文,AI写作,Prompt,Prompt生成器,ChatGPT,Claude,DeepSeek,工作总结,整改报告,项目申报,教学认证,工程教育认证,会议纪要" />
+  <meta name="author" content="EduPromptStudio" />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="canonical" href="https://chateldonko.github.io/EduPromptStudio/" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EduPrompt Studio" />
+  <meta property="og:title" content="EduPrompt Studio — 高校行政 AI 公文 Prompt 生成器" />
+  <meta property="og:description" content="9 类高校行政材料一键生成专业 Prompt，适配 ChatGPT / Claude / DeepSeek。" />
+  <meta property="og:url" content="https://chateldonko.github.io/EduPromptStudio/" />
+  <meta property="og:image" content="https://chateldonko.github.io/EduPromptStudio/assets/demo.png" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EduPrompt Studio — 高校行政 AI 公文 Prompt 生成器" />
+  <meta name="twitter:description" content="9 类高校行政材料一键生成专业 Prompt，适配 ChatGPT / Claude / DeepSeek。" />
+  <meta name="twitter:image" content="https://chateldonko.github.io/EduPromptStudio/assets/demo.png" />
+
+  <!-- Structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EduPrompt Studio",
+    "url": "https://chateldonko.github.io/EduPromptStudio/",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any (Web)",
+    "inLanguage": "zh-CN",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+    "description": "高校行政场景下的 AI 公文 Prompt 生成器，覆盖 9 类常见材料。"
+  }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #1f2937;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .header {
+      height: 72px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .header span {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .header .links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .header .links a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    .header .links a:hover {
+      color: #2563eb;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 72px);
+    }
+
+    .left-panel {
+      width: 40%;
+      background: #ffffff;
+      border-right: 1px solid #e5e7eb;
+      padding: 28px;
+      overflow-y: auto;
+    }
+
+    .right-panel {
+      width: 60%;
+      padding: 28px;
+      overflow-y: auto;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 14px;
+      background: #fff;
+      transition: all 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2563eb;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    button {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .generate-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .generate-btn:hover:not(:disabled) {
+      background: #1d4ed8;
+    }
+
+    .copy-btn {
+      background: #111827;
+      color: white;
+    }
+
+    .copy-btn:hover:not(:disabled) {
+      background: #000000;
+    }
+
+    .example-btn {
+      background: transparent;
+      color: #2563eb;
+      border: 1px solid #c7d2fe;
+      padding: 8px 12px;
+      font-size: 13px;
+      border-radius: 8px;
+      flex: 0 0 auto;
+      margin-bottom: 12px;
+    }
+
+    .example-btn:hover {
+      background: #eff6ff;
+    }
+
+    .output-box {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      min-height: calc(100vh - 220px);
+      white-space: pre-wrap;
+      line-height: 1.8;
+      font-size: 14px;
+      overflow-wrap: break-word;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .disclaimer {
+      margin-top: 16px;
+      padding: 10px 12px;
+      background: #fef3c7;
+      color: #92400e;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .error-box {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .error-box code {
+      background: #fee2e2;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: "Consolas", "Menlo", monospace;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-panel,
+      .right-panel {
+        width: 100%;
+        height: auto;
+      }
+
+      body {
+        overflow: auto;
+      }
+
+      .header {
+        padding: 0 16px;
+      }
+
+      .header .links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>EduPrompt Studio</h1>
+      <span>高校行政 AI 公文 Prompt 工具箱</span>
+    </div>
+    <div class="links">
+      <a href="https://github.com/chateldonKo/EduPromptStudio" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/chateldonKo/EduPromptStudio/issues/new/choose" target="_blank" rel="noopener">反馈</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left-panel">
+      <div class="section-title">输入信息</div>
+
+      <div class="form-group">
+        <label for="college">学院 / 部门名称</label>
+        <input type="text" id="college" placeholder="例如：机电工程学院" />
+      </div>
+
+      <div class="form-group">
+        <label for="templateType">材料类型</label>
+        <select id="templateType" aria-label="材料类型"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="style">风格</label>
+        <select id="style">
+          <option value="正式稳妥">正式稳妥</option>
+          <option value="客观分析">客观分析</option>
+          <option value="领导讲话">领导讲话</option>
+          <option value="简洁通知">简洁通知</option>
+          <option value="数据分析型">数据分析型</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="topic">问题 / 主题</label>
+        <textarea id="topic" placeholder="例如：毕业设计抽检不合格整改"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="background">补充背景</label>
+        <textarea id="background" placeholder="例如：学校开展本科毕业设计专项检查，发现部分材料不规范"></textarea>
+      </div>
+
+      <button type="button" class="example-btn" id="fillExampleBtn">填入示例数据</button>
+
+      <div class="button-group">
+        <button type="button" class="generate-btn" id="generateBtn" disabled>生成 Prompt</button>
+        <button type="button" class="copy-btn" id="copyBtn">复制 Prompt</button>
+      </div>
+
+      <div class="footer-note">
+        本工具仅生成 Prompt，不直接生成公文内容。<br>
+        建议配合 ChatGPT、Claude、DeepSeek 等 AI 工具使用。
+      </div>
+
+      <div class="disclaimer">
+        ⚠️ AI 生成内容仅供参考，正式发文前请人工审核，确保符合所在单位的实际情况与合规要求。
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="section-title">生成结果</div>
+
+      <div id="tags"></div>
+
+      <div class="output-box" id="output">模板加载中…</div>
+    </div>
+  </div>
+
+  <script>
+    const TEMPLATES_BASE = './data/templates/';
+    const state = { templates: {}, order: [] };
+
+    async function loadTemplates() {
+      const indexResp = await fetch(TEMPLATES_BASE + 'index.json', { cache: 'no-cache' });
+      if (!indexResp.ok) throw new Error('index.json: ' + indexResp.status);
+      const manifest = await indexResp.json();
+      state.order = manifest.templates;
+
+      const entries = await Promise.all(
+        manifest.templates.map(async (id) => {
+          const r = await fetch(TEMPLATES_BASE + id + '.json', { cache: 'no-cache' });
+          if (!r.ok) throw new Error(id + '.json: ' + r.status);
+          return [id, await r.json()];
+        })
+      );
+      entries.forEach(([id, data]) => { state.templates[id] = data; });
+    }
+
+    function renderTemplateOptions() {
+      const select = document.getElementById('templateType');
+      select.innerHTML = state.order.map(id => {
+        const t = state.templates[id];
+        return `<option value="${id}">${t.icon ? t.icon + ' ' : ''}${t.name}</option>`;
+      }).join('');
+    }
+
+    function buildPrompt({ template, college, style, topic, background }) {
+      const list = (arr) => arr.map(x => `- ${x}`).join('\n');
+      return [
+        '你现在是高校行政工作人员。',
+        '',
+        `请根据以下内容，生成一份${template.name}正式材料。`,
+        '',
+        '【学院名称】',
+        college || '待填写',
+        '',
+        '【主题内容】',
+        topic || '待填写',
+        '',
+        '【补充背景】',
+        background || '无',
+        '',
+        '请严格按照以下结构输出：',
+        list(template.structure),
+        '',
+        '语言风格要求：',
+        list(template.tone),
+        `- 整体风格倾向「${style}」`,
+        '- 使用高校正式行政公文风格',
+        '- 避免空话套话',
+        '- 强调可执行性',
+        '- 保持语言客观稳妥',
+        '',
+        '禁止使用以下表达：',
+        list(template.forbidden),
+        '',
+        '输出要求：',
+        '1. 内容符合高校内部行政材料风格',
+        '2. 不要使用网络化语言',
+        '3. 不要夸张宣传',
+        '4. 不出现明显 AI 痕迹',
+        '5. 保持结构完整、逻辑清晰'
+      ].join('\n');
+    }
+
+    function generatePrompt() {
+      const id = document.getElementById('templateType').value;
+      const template = state.templates[id];
+      if (!template) return;
+      const college = document.getElementById('college').value.trim();
+      const style = document.getElementById('style').value;
+      const topic = document.getElementById('topic').value.trim();
+      const background = document.getElementById('background').value.trim();
+
+      document.getElementById('output').textContent =
+        buildPrompt({ template, college, style, topic, background });
+
+      document.getElementById('tags').innerHTML = `
+        <span class="tag">${template.name}</span>
+        <span class="tag">${style}</span>
+        <span class="tag">${college || '未填写学院'}</span>
+      `;
+    }
+
+    function fillExample() {
+      const id = document.getElementById('templateType').value;
+      const template = state.templates[id];
+      if (!template || !template.examples) return;
+      if (template.examples.topic) {
+        document.getElementById('topic').value = template.examples.topic;
+      }
+      if (template.examples.background) {
+        document.getElementById('background').value = template.examples.background;
+      }
+    }
+
+    function copyPrompt() {
+      const text = document.getElementById('output').textContent;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text)
+          .then(() => alert('Prompt 已复制'))
+          .catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        if (document.execCommand('copy')) alert('Prompt 已复制');
+        else alert('复制失败，请手动复制');
+      } catch {
+        alert('复制失败，请手动复制');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showLoadError(err) {
+      const isFileProtocol = location.protocol === 'file:';
+      const output = document.getElementById('output');
+      output.classList.remove('output-box');
+      output.innerHTML = `
+        <div class="error-box">
+          <strong>模板加载失败</strong>${err && err.message ? '：' + err.message : ''}<br/><br/>
+          ${isFileProtocol
+            ? '检测到你正在用 <code>file://</code> 直接打开本页面。浏览器禁止从本地文件读取 JSON，请改用以下任一方式：<br/>' +
+              '<br/>① 直接访问在线版：<a href="https://chateldonko.github.io/EduPromptStudio/" target="_blank" rel="noopener">chateldonko.github.io/EduPromptStudio/</a><br/>' +
+              '② 在项目根目录运行 <code>python -m http.server 8000</code>，再访问 <code>http://localhost:8000</code>。'
+            : '请刷新重试，或在 GitHub 提交 issue。'}
+        </div>
+      `;
+    }
+
+    (async function init() {
+      try {
+        await loadTemplates();
+        renderTemplateOptions();
+        document.getElementById('output').textContent =
+          '请填写左侧内容后点击「生成 Prompt」。';
+        document.getElementById('generateBtn').disabled = false;
+        document.getElementById('generateBtn').addEventListener('click', generatePrompt);
+        document.getElementById('copyBtn').addEventListener('click', copyPrompt);
+        document.getElementById('fillExampleBtn').addEventListener('click', fillExample);
+      } catch (err) {
+        console.error(err);
+        showLoadError(err);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+name: 📝 新公文模板请求
+description: 申请新增一类高校公文 Prompt 模板（如：评奖评优、师德考核 等）
+title: "[Template] "
+labels: ["template", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        申请新模板之前，可以先看一眼 [CONTRIBUTING.md](../CONTRIBUTING.md) 里的字段格式。如果你能直接提交 PR 就更好啦。
+
+  - type: input
+    id: name
+    attributes:
+      label: 模板名称
+      placeholder: 例如：评奖评优类、师德考核类
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 适用场景
+      description: 这类材料一般在哪些场合用？谁会写？写给谁看？
+    validations:
+      required: true
+
+  - type: textarea
+    id: structure
+    attributes:
+      label: 建议的段落结构
+      description: 写成 - 列表，比如「基本情况 / 主要事迹 / 推荐理由」
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: tone
+    attributes:
+      label: 期望的语气风格
+      placeholder: 正式 / 客观 / 数据导向 ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: forbidden
+    attributes:
+      label: 应避免的表达
+      description: 哪些套话、夸张词在这类场景里要避开？
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: 示例（可选）
+      description: 给一个真实写过的题目和背景，便于设置「填入示例数据」。
