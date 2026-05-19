@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
 
   <!-- Primary SEO -->
   <title>EduPrompt Studio — 高校行政 AI 公文 Prompt 生成器</title>
@@ -44,9 +43,6 @@
   }
   </script>
 
-=======
-  <title>EduPrompt Studio</title>
->>>>>>> origin/main
   <style>
     * {
       margin: 0;
@@ -84,7 +80,6 @@
       display: block;
     }
 
-<<<<<<< HEAD
     .header .links {
       display: flex;
       gap: 18px;
@@ -100,8 +95,6 @@
       color: #2563eb;
     }
 
-=======
->>>>>>> origin/main
     .container {
       display: flex;
       height: calc(100vh - 72px);
@@ -182,24 +175,19 @@
       transition: all 0.2s ease;
     }
 
-<<<<<<< HEAD
     button:disabled {
       opacity: 0.55;
       cursor: not-allowed;
     }
 
-=======
->>>>>>> origin/main
     .generate-btn {
       background: #2563eb;
       color: white;
     }
 
-<<<<<<< HEAD
+
     .generate-btn:hover:not(:disabled) {
-=======
-    .generate-btn:hover {
->>>>>>> origin/main
+
       background: #1d4ed8;
     }
 
@@ -208,7 +196,7 @@
       color: white;
     }
 
-<<<<<<< HEAD
+
     .copy-btn:hover:not(:disabled) {
       background: #000000;
     }
@@ -228,22 +216,13 @@
       background: #eff6ff;
     }
 
-=======
-    .copy-btn:hover {
-      background: #000000;
-    }
-
->>>>>>> origin/main
     .output-box {
       background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 16px;
       padding: 24px;
-<<<<<<< HEAD
       min-height: calc(100vh - 220px);
-=======
-      min-height: calc(100vh - 160px);
->>>>>>> origin/main
+
       white-space: pre-wrap;
       line-height: 1.8;
       font-size: 14px;
@@ -268,7 +247,6 @@
       line-height: 1.6;
     }
 
-<<<<<<< HEAD
     .disclaimer {
       margin-top: 16px;
       padding: 10px 12px;
@@ -296,8 +274,7 @@
       font-family: "Consolas", "Menlo", monospace;
     }
 
-=======
->>>>>>> origin/main
+
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -312,7 +289,6 @@
       body {
         overflow: auto;
       }
-<<<<<<< HEAD
 
       .header {
         padding: 0 16px;
@@ -321,8 +297,7 @@
       .header .links {
         display: none;
       }
-=======
->>>>>>> origin/main
+
     }
   </style>
 </head>
@@ -332,13 +307,12 @@
       <h1>EduPrompt Studio</h1>
       <span>高校行政 AI 公文 Prompt 工具箱</span>
     </div>
-<<<<<<< HEAD
+
     <div class="links">
       <a href="https://github.com/chateldonKo/EduPromptStudio" target="_blank" rel="noopener">GitHub</a>
       <a href="https://github.com/chateldonKo/EduPromptStudio/issues/new/choose" target="_blank" rel="noopener">反馈</a>
     </div>
-=======
->>>>>>> origin/main
+
   </div>
 
   <div class="container">
@@ -346,40 +320,19 @@
       <div class="section-title">输入信息</div>
 
       <div class="form-group">
-<<<<<<< HEAD
         <label for="college">学院 / 部门名称</label>
-=======
-        <label>学院名称</label>
->>>>>>> origin/main
         <input type="text" id="college" placeholder="例如：机电工程学院" />
       </div>
 
       <div class="form-group">
-<<<<<<< HEAD
+
         <label for="templateType">材料类型</label>
         <select id="templateType" aria-label="材料类型"></select>
       </div>
 
       <div class="form-group">
         <label for="style">风格</label>
-=======
-        <label>材料类型</label>
-        <select id="templateType">
-          <option value="rectification">整改类</option>
-          <option value="summary">总结汇报类</option>
-          <option value="implementation">方案类</option>
-          <option value="project">项目申报类</option>
-          <option value="research">调研分析类</option>
-          <option value="meeting">会议纪要类</option>
-          <option value="notice">通知说明类</option>
-          <option value="speech">讲话稿类</option>
-          <option value="accreditation">教学认证类</option>
-        </select>
-      </div>
 
-      <div class="form-group">
-        <label>风格</label>
->>>>>>> origin/main
         <select id="style">
           <option value="正式稳妥">正式稳妥</option>
           <option value="客观分析">客观分析</option>
@@ -390,16 +343,14 @@
       </div>
 
       <div class="form-group">
-<<<<<<< HEAD
+
         <label for="topic">问题 / 主题</label>
-=======
-        <label>问题 / 主题</label>
->>>>>>> origin/main
+
         <textarea id="topic" placeholder="例如：毕业设计抽检不合格整改"></textarea>
       </div>
 
       <div class="form-group">
-<<<<<<< HEAD
+
         <label for="background">补充背景</label>
         <textarea id="background" placeholder="例如：学校开展本科毕业设计专项检查，发现部分材料不规范"></textarea>
       </div>
@@ -409,28 +360,19 @@
       <div class="button-group">
         <button type="button" class="generate-btn" id="generateBtn" disabled>生成 Prompt</button>
         <button type="button" class="copy-btn" id="copyBtn">复制 Prompt</button>
-=======
-        <label>补充背景</label>
-        <textarea id="background" placeholder="例如：学校开展本科毕业设计专项检查，发现部分材料不规范"></textarea>
-      </div>
 
-      <div class="button-group">
-        <button class="generate-btn" onclick="generatePrompt()">生成 Prompt</button>
-        <button class="copy-btn" onclick="copyPrompt()">复制 Prompt</button>
->>>>>>> origin/main
       </div>
 
       <div class="footer-note">
         本工具仅生成 Prompt，不直接生成公文内容。<br>
         建议配合 ChatGPT、Claude、DeepSeek 等 AI 工具使用。
       </div>
-<<<<<<< HEAD
+
 
       <div class="disclaimer">
         ⚠️ AI 生成内容仅供参考，正式发文前请人工审核，确保符合所在单位的实际情况与合规要求。
       </div>
-=======
->>>>>>> origin/main
+
     </div>
 
     <div class="right-panel">
@@ -438,18 +380,14 @@
 
       <div id="tags"></div>
 
-<<<<<<< HEAD
+
       <div class="output-box" id="output">模板加载中…</div>
-=======
-      <div class="output-box" id="output">
-请填写左侧内容后点击「生成 Prompt」。
-      </div>
->>>>>>> origin/main
+
     </div>
   </div>
 
   <script>
-<<<<<<< HEAD
+
     const TEMPLATES_BASE = './data/templates/';
     const state = { templates: {}, order: [] };
 
@@ -521,86 +459,14 @@
       const template = state.templates[id];
       if (!template) return;
       const college = document.getElementById('college').value.trim();
-=======
-    const templates = {
-      rectification: {
-        name: "整改类",
-        structure: ["问题情况", "原因分析", "整改措施", "长效机制"],
-        tone: ["正式", "稳妥", "克制"],
-        forbidden: ["极其严重", "完全失败", "恶劣影响"]
-      },
-      summary: {
-        name: "总结汇报类",
-        structure: ["工作开展情况", "工作成效", "存在问题", "下一步计划"],
-        tone: ["正式", "客观", "成绩优先"],
-        forbidden: ["历史性突破", "全国领先", "成果丰硕"]
-      },
-      implementation: {
-        name: "方案类",
-        structure: ["背景与目标", "工作内容", "实施步骤", "保障措施"],
-        tone: ["正式", "强调执行", "强调组织性"],
-        forbidden: ["全面升级", "尽快完成", "全面革新"]
-      },
-      project: {
-        name: "项目申报类",
-        structure: ["项目背景", "建设目标", "建设内容", "实施路径", "预期成果", "经费预算"],
-        tone: ["正式", "成果导向", "强调必要性"],
-        forbidden: ["革命性创新", "全国唯一", "绝对领先"]
-      },
-      research: {
-        name: "调研分析类",
-        structure: ["调研背景", "现状分析", "问题分析", "对策建议"],
-        tone: ["客观", "逻辑严谨", "数据导向"],
-        forbidden: ["明显失败", "效果极差", "管理混乱"]
-      },
-      meeting: {
-        name: "会议纪要类",
-        structure: ["会议基本情况", "会议讨论内容", "会议决定事项"],
-        tone: ["简洁", "客观", "强调落实"],
-        forbidden: ["会议圆满成功", "现场气氛热烈"]
-      },
-      notice: {
-        name: "通知说明类",
-        structure: ["事项背景", "工作要求", "时间安排", "注意事项"],
-        tone: ["简洁", "正式", "明确"],
-        forbidden: ["深入贯彻落实", "全面加强"]
-      },
-      speech: {
-        name: "讲话稿类",
-        structure: ["工作回顾", "当前形势", "工作要求", "总结强调"],
-        tone: ["正式", "强调站位", "有层次"],
-        forbidden: ["掌声热烈", "携手共创辉煌"]
-      },
-      accreditation: {
-        name: "教学认证类",
-        structure: ["基本情况", "建设成效", "存在问题", "改进措施"],
-        tone: ["规范", "客观", "持续改进"],
-        forbidden: ["全国顶尖", "成果卓著", "全面优秀"]
-      }
-    };
 
-    function generatePrompt() {
-      const college = document.getElementById('college').value.trim();
-      const type = document.getElementById('templateType').value;
->>>>>>> origin/main
       const style = document.getElementById('style').value;
       const topic = document.getElementById('topic').value.trim();
       const background = document.getElementById('background').value.trim();
 
-<<<<<<< HEAD
+
       document.getElementById('output').textContent =
         buildPrompt({ template, college, style, topic, background });
-=======
-      const template = templates[type];
-
-      const structureText = template.structure.map(item => `- ${item}`).join('\n');
-      const toneText = template.tone.map(item => `- ${item}`).join('\n');
-      const forbiddenText = template.forbidden.map(item => `- ${item}`).join('\n');
-
-      const prompt = `你现在是高校行政工作人员。\n\n请根据以下内容，生成一份${template.name}正式材料。\n\n【学院名称】\n${college || '待填写'}\n\n【主题内容】\n${topic || '待填写'}\n\n【补充背景】\n${background || '无'}\n\n请严格按照以下结构输出：\n${structureText}\n\n语言风格要求：\n${toneText}\n- 使用高校正式行政公文风格\n- 避免空话套话\n- 强调可执行性\n- 保持语言客观稳妥\n\n禁止使用以下表达：\n${forbiddenText}\n\n输出要求：\n1. 内容符合高校内部行政材料风格\n2. 不要使用网络化语言\n3. 不要夸张宣传\n4. 不出现明显AI痕迹\n5. 保持结构完整、逻辑清晰`; 
-
-      document.getElementById('output').textContent = prompt;
->>>>>>> origin/main
 
       document.getElementById('tags').innerHTML = `
         <span class="tag">${template.name}</span>
@@ -609,7 +475,7 @@
       `;
     }
 
-<<<<<<< HEAD
+
     function fillExample() {
       const id = document.getElementById('templateType').value;
       const template = state.templates[id];
@@ -628,19 +494,7 @@
         navigator.clipboard.writeText(text)
           .then(() => alert('Prompt 已复制'))
           .catch(() => fallbackCopy(text));
-=======
-    function copyPrompt() {
-      const text = document.getElementById('output').textContent;
 
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text)
-          .then(() => {
-            alert('Prompt 已复制');
-          })
-          .catch(() => {
-            fallbackCopy(text);
-          });
->>>>>>> origin/main
       } else {
         fallbackCopy(text);
       }
@@ -654,7 +508,7 @@
       document.body.appendChild(textarea);
       textarea.focus();
       textarea.select();
-<<<<<<< HEAD
+
       try {
         if (document.execCommand('copy')) alert('Prompt 已复制');
         else alert('复制失败，请手动复制');
@@ -695,22 +549,7 @@
         showLoadError(err);
       }
     })();
-=======
 
-      try {
-        const successful = document.execCommand('copy');
-        if (successful) {
-          alert('Prompt 已复制');
-        } else {
-          alert('复制失败，请手动复制');
-        }
-      } catch (err) {
-        alert('复制失败，请手动复制');
-      }
-
-      document.body.removeChild(textarea);
-    }
->>>>>>> origin/main
   </script>
 </body>
 </html>
