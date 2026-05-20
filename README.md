@@ -11,7 +11,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 ![Stars](https://img.shields.io/github/stars/chateldonKo/EduPromptStudio?style=social)
 
-[🚀 在线体验](https://chateldonko.github.io/EduPromptStudio/) · [📥 贡献新模板](./CONTRIBUTING.md) · [💬 提建议](https://github.com/chateldonKo/EduPromptStudio/issues/new/choose)
+[🚀 在线体验](https://chateldonko.github.io/EduPromptStudio/) · [📚 案例库](./docs/cases/) · [📥 贡献新模板](./CONTRIBUTING.md) · [💬 提建议](https://github.com/chateldonKo/EduPromptStudio/issues/new/choose)
 
 ![demo](./assets/demo.png)
 
@@ -37,19 +37,19 @@ EduPrompt Studio 是一个**纯前端、零部署、零账号**的 Prompt 生成
 
 ## 支持哪些公文类型
 
-当前覆盖 9 类高频材料，对应 `data/templates/` 下的 9 个 JSON 文件：
+当前覆盖 9 类高频材料，对应 `data/templates/` 下的 9 个 JSON 文件。每类都有真实场景案例，在 [docs/cases/](./docs/cases/) 里：
 
-| 分类 | 适用场景 |
-| --- | --- |
-| 🛠 整改类 | 检查、巡视、审计、督导后的整改回应 |
-| 📊 总结汇报类 | 年度 / 学期 / 项目结项 / 专项总结 |
-| 📐 方案类 | 工作方案、活动方案、实施细则 |
-| 🏷 项目申报类 | 教改项目、平台建设、专项经费申报 |
-| 🔍 调研分析类 | 专题调研、现状摸底、问题分析 |
-| 📝 会议纪要类 | 党政联席会、院务会、专题会 |
-| 📢 通知说明类 | 对内/对外通知、说明、提醒 |
-| 🎤 讲话稿类 | 大会、动员会、座谈会、颁奖会讲话 |
-| 🎓 教学认证类 | 工程教育认证、师范专业认证、审核评估 |
+| 分类 | 适用场景 | 案例 |
+| --- | --- | --- |
+| 🛠 整改类 | 检查、巡视、审计、督导后的整改回应 | [→](./docs/cases/rectification.md) |
+| 📊 总结汇报类 | 年度 / 学期 / 项目结项 / 专项总结 | [→](./docs/cases/summary.md) |
+| 📐 方案类 | 工作方案、活动方案、实施细则 | [→](./docs/cases/implementation.md) |
+| 🏷 项目申报类 | 教改项目、平台建设、专项经费申报 | [→](./docs/cases/project.md) |
+| 🔍 调研分析类 | 专题调研、现状摸底、问题分析 | [→](./docs/cases/research.md) |
+| 📝 会议纪要类 | 党政联席会、院务会、专题会 | [→](./docs/cases/meeting.md) |
+| 📢 通知说明类 | 对内/对外通知、说明、提醒 | [→](./docs/cases/notice.md) |
+| 🎤 讲话稿类 | 大会、动员会、座谈会、颁奖会讲话 | [→](./docs/cases/speech.md) |
+| 🎓 教学认证类 | 工程教育认证、师范专业认证、审核评估 | [→](./docs/cases/accreditation.md) |
 
 新增模板？只需提交一个 PR → 在 `data/templates/` 里加一个 JSON 文件，详见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
@@ -83,20 +83,18 @@ php -S localhost:8000             # PHP
 EduPromptStudio/
 ├── index.html              # 主页面（含 SEO meta、UI、逻辑）
 ├── favicon.svg             # 站点图标
-├── data/
-│   └── templates/
-│       ├── index.json      # 模板清单
-│       ├── rectification.json
-│       ├── summary.json
-│       └── ...             # 共 9 个模板
-├── assets/
-│   └── demo.png            # 演示截图
+├── data/templates/         # 9 个模板 JSON + index.json 清单
+├── assets/demo.png         # 演示截图
+├── docs/
+│   ├── cases/              # 9 类公文的真实案例（输入 + Prompt + AI 输出）
+│   ├── growth-playbook.md  # 增长手册（小红书/公众号/知乎/导航站）
+│   └── analytics.md        # 隐私友好的访问统计接入指南
 ├── .github/
 │   ├── ISSUE_TEMPLATE/     # Issue 模板（Bug / 功能 / 新模板）
 │   └── PULL_REQUEST_TEMPLATE.md
-├── CONTRIBUTING.md         # 贡献指南
-├── CODE_OF_CONDUCT.md      # 行为准则
-├── CHANGELOG.md            # 版本变更
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── CHANGELOG.md
 ├── LICENSE                 # Apache-2.0
 └── README.md
 ```
@@ -140,13 +138,14 @@ EduPromptStudio/
 - [x] SEO / 社交分享卡片 / favicon
 - [x] 模板数据化（JSON）便于社区贡献
 - [x] 仓库规范化（Issue / PR / Contributing）
+- [x] 案例库：每个模板配真实输入与 AI 输出示例
+- [x] 增长手册（小红书 / 公众号 / 知乎话题 / 导航站投递清单）
+- [x] 埋点接入指南（Umami / Plausible / GoatCounter）
 - [ ] 用户输入 localStorage 持久化 + 历史记录
 - [ ] 一键导出 `.md` / `.txt`
 - [ ] 模板子类型（如「总结」拆分为 年度/学期/党建/结项）
 - [ ] 字数 / 受众 / 是否含数据等参数化字段
 - [ ] PWA：可"安装到主屏 + 离线使用"
-- [ ] 案例库：每个模板配 2–3 个真实输入与 AI 输出示例
-- [ ] 接入隐私友好的统计（Umami / Plausible）
 
 ## 贡献
 
@@ -173,51 +172,12 @@ A：都不需要。生成完 Prompt 后，自己粘贴到任何 AI 工具里就�
 **Q：可以二次开发并部署到我们学校内网吗？**
 A：可以。本项目使用 Apache-2.0 协议，保留版权声明即可商用、改用、内网部署。
 
+## Star History
+
+如果这个工具帮到你，欢迎点一下 Star，这是对独立开发者最大的鼓励。
+
+[![Star History Chart](https://api.star-history.com/svg?repos=chateldonKo/EduPromptStudio&type=Date)](https://star-history.com/#chateldonKo/EduPromptStudio&Date)
+
 ## License
 
 [Apache License 2.0](./LICENSE) © chateldonKo
-=======
-# EduPromptStudio
-
-高校行政 AI 公文 Prompt 工具箱
-
-一个面向高校行政办公场景的 Prompt 生成工具。
-
-## 在线体验
-
-https://chateldonko.github.io/EduPromptStudio/
-
-支持：
-
-- 整改报告
-- 年终总结
-- 工作方案
-- 项目申报
-- 调研报告
-- 会议纪要
-- 通知说明
-- 领导讲话
-- 教学认证材料
-
-等九类高校行政材料。
-
----
-
-# 功能特点
-
-- 单 HTML 文件
-- 无需部署
-- 本地运行
-- 零配置
-- Prompt 自动生成
-- 适配 ChatGPT / Claude / DeepSeek
-
----
-
-# 使用方式
-
-## 1. 下载项目
-
-```bash
-git clone https://github.com/chateldonKo/EduPromptStudio.git
->>>>>>> origin/main

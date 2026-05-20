@@ -187,7 +187,6 @@
 
 
     .generate-btn:hover:not(:disabled) {
-
       background: #1d4ed8;
     }
 
@@ -195,7 +194,6 @@
       background: #111827;
       color: white;
     }
-
 
     .copy-btn:hover:not(:disabled) {
       background: #000000;
@@ -222,7 +220,6 @@
       border-radius: 16px;
       padding: 24px;
       min-height: calc(100vh - 220px);
-
       white-space: pre-wrap;
       line-height: 1.8;
       font-size: 14px;
@@ -274,7 +271,6 @@
       font-family: "Consolas", "Menlo", monospace;
     }
 
-
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -310,6 +306,7 @@
 
     <div class="links">
       <a href="https://github.com/chateldonKo/EduPromptStudio" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/chateldonKo/EduPromptStudio/discussions" target="_blank" rel="noopener">社区</a>
       <a href="https://github.com/chateldonKo/EduPromptStudio/issues/new/choose" target="_blank" rel="noopener">反馈</a>
     </div>
 
@@ -325,14 +322,12 @@
       </div>
 
       <div class="form-group">
-
         <label for="templateType">材料类型</label>
         <select id="templateType" aria-label="材料类型"></select>
       </div>
 
       <div class="form-group">
         <label for="style">风格</label>
-
         <select id="style">
           <option value="正式稳妥">正式稳妥</option>
           <option value="客观分析">客观分析</option>
@@ -345,12 +340,10 @@
       <div class="form-group">
 
         <label for="topic">问题 / 主题</label>
-
         <textarea id="topic" placeholder="例如：毕业设计抽检不合格整改"></textarea>
       </div>
 
       <div class="form-group">
-
         <label for="background">补充背景</label>
         <textarea id="background" placeholder="例如：学校开展本科毕业设计专项检查，发现部分材料不规范"></textarea>
       </div>
@@ -360,26 +353,23 @@
       <div class="button-group">
         <button type="button" class="generate-btn" id="generateBtn" disabled>生成 Prompt</button>
         <button type="button" class="copy-btn" id="copyBtn">复制 Prompt</button>
-
       </div>
 
       <div class="footer-note">
         本工具仅生成 Prompt，不直接生成公文内容。<br>
-        建议配合 ChatGPT、Claude、DeepSeek 等 AI 工具使用。
+        建议配合 ChatGPT、Claude、DeepSeek 等 AI 工具使用。<br>
+        想要新模板？<a href="https://github.com/chateldonKo/EduPromptStudio/issues/new?template=template_request.yml" target="_blank" rel="noopener">告诉我们</a>。
       </div>
-
 
       <div class="disclaimer">
         ⚠️ AI 生成内容仅供参考，正式发文前请人工审核，确保符合所在单位的实际情况与合规要求。
       </div>
-
     </div>
 
     <div class="right-panel">
       <div class="section-title">生成结果</div>
 
       <div id="tags"></div>
-
 
       <div class="output-box" id="output">模板加载中…</div>
 
@@ -459,12 +449,9 @@
       const template = state.templates[id];
       if (!template) return;
       const college = document.getElementById('college').value.trim();
-
       const style = document.getElementById('style').value;
       const topic = document.getElementById('topic').value.trim();
       const background = document.getElementById('background').value.trim();
-
-
       document.getElementById('output').textContent =
         buildPrompt({ template, college, style, topic, background });
 
@@ -474,7 +461,6 @@
         <span class="tag">${college || '未填写学院'}</span>
       `;
     }
-
 
     function fillExample() {
       const id = document.getElementById('templateType').value;
@@ -494,7 +480,6 @@
         navigator.clipboard.writeText(text)
           .then(() => alert('Prompt 已复制'))
           .catch(() => fallbackCopy(text));
-
       } else {
         fallbackCopy(text);
       }
@@ -508,7 +493,6 @@
       document.body.appendChild(textarea);
       textarea.focus();
       textarea.select();
-
       try {
         if (document.execCommand('copy')) alert('Prompt 已复制');
         else alert('复制失败，请手动复制');
@@ -549,7 +533,6 @@
         showLoadError(err);
       }
     })();
-
   </script>
 </body>
 </html>
