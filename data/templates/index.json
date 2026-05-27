@@ -10,6 +10,25 @@
     "meeting",
     "notice",
     "speech",
-    "accreditation"
+    "accreditation",
+    "tenure-review",
+    "commendation",
+    "title-promotion",
+    "cadre-appraisal",
+    "scholarship-recommendation",
+    "performance-review",
+    "competitive-speech",
+    "talent-introduction",
+    "lab-construction",
+    "training-summary",
+    "major-request",
+    "thesis-defense",
+    "assistance-summary",
+    "industry-cooperation",
+    "ideological-curriculum",
+    "discipline-planning",
+    "emergency-report",
+    "international-cooperation",
+    "employment-analysis"
   ]
 }

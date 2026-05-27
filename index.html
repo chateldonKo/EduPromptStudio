@@ -502,6 +502,16 @@
       document.body.removeChild(textarea);
     }
 
+    function updatePlaceholders() {
+      const id = document.getElementById('templateType').value;
+      const template = state.templates[id];
+      if (!template || !template.examples) return;
+      const topicEl = document.getElementById('topic');
+      const bgEl    = document.getElementById('background');
+      if (template.examples.topic)      topicEl.placeholder = template.examples.topic;
+      if (template.examples.background) bgEl.placeholder    = template.examples.background;
+    }
+
     function showLoadError(err) {
       const isFileProtocol = location.protocol === 'file:';
       const output = document.getElementById('output');
@@ -528,6 +538,17 @@
         document.getElementById('generateBtn').addEventListener('click', generatePrompt);
         document.getElementById('copyBtn').addEventListener('click', copyPrompt);
         document.getElementById('fillExampleBtn').addEventListener('click', fillExample);
+
+        // 初始化时先跑一次
+        updatePlaceholders();
+
+        // 切换材料类型时更新 placeholder 并清空旧内容
+        document.getElementById('templateType').addEventListener('change', () => {
+          document.getElementById('topic').value = '';
+          document.getElementById('background').value = '';
+          updatePlaceholders();
+        });
+
       } catch (err) {
         console.error(err);
         showLoadError(err);
