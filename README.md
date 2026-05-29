@@ -13,6 +13,8 @@
 
 [🚀 在线体验](https://chateldonko.github.io/EduPromptStudio/) · [📚 案例库](./docs/cases/) · [📥 贡献新模板](./CONTRIBUTING.md) · [💬 提建议](https://github.com/chateldonKo/EduPromptStudio/issues/new/choose)
 
+[![爱发电](https://img.shields.io/badge/爱发电-支持作者-946ce6?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMyAyLjA1djIuMDJjMy45NS41MSA3IDMuODUgNyA3LjkzIDAgMy4yMS0xLjgyIDUuOTktNC41NyA3LjRMMTMgMTcuMlY1LjA1ek0xMSAxNy4yMWwtMi40MyAxLjhoLS4wMUMuMTMgMTUuNTYtMi4yMiA5LjMzIDIuMDUgNS4wNUE4Ljk4IDguOTggMCAwIDEgMTEgMi4wNXYyLjAyQzcuMDUgNC41NiA0IDcuOSA0IDEyYzAgMy4yMSAxLjgyIDUuOTkgNC41NyA3LjRMOSAxNy4yMXoiLz48L3N2Zz4=&style=flat-square)](https://afdian.com/a/EduPromptStudio)
+
 ![demo](./assets/demo.png)
 
 </div>
@@ -181,3 +183,20 @@ A：可以。本项目使用 Apache-2.0 协议，保留版权声明即可商用�
 ## License
 
 [Apache License 2.0](./LICENSE) © chateldonKo
+
+## 🙏 支持项目
+
+EduPromptStudio 完全免费开源，持续维护需要动力。
+
+如果这个工具帮你省下了写材料的时间，欢迎请作者喝杯咖啡 ☕
+
+<a href="https://afdian.com/a/你的用户名">
+  <img src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" width="180"/>
+</a>
+
+也欢迎直接 ⭐ Star 本项目，是对作者最直接的鼓励。
+
+### 致谢赞助者
+
+<!-- 机构赞助（¥99档）的单位名称将显示在这里 -->
+感谢所有支持者，你们的名字将出现在这里 🎉
